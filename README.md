@@ -186,7 +186,7 @@ project_sertifikasi/
 
 ---
 
-## 🔑 Konfigurasi Database
+## Konfigurasi Database
 
 ### Tabel `users`
 | Kolom | Tipe | Deskripsi |
@@ -229,7 +229,7 @@ project_sertifikasi/
 
 ---
 
-## 👤 Panduan Pengguna
+## Panduan Pengguna
 
 ### Untuk Admin
 
@@ -307,7 +307,7 @@ project_sertifikasi/
 
 ---
 
-## 📡 Dokumentasi API
+## Dokumentasi API
 
 ### Session Variables
 ```php
@@ -392,45 +392,6 @@ $_SESSION['logged_in']    // Status login (true/false)
 - Input: `id` (bookmark_id)
 - Output: Delete bookmark dari database
 - Protection: User login only
-
----
-
-## 🐛 Troubleshooting
-
-### Error: "Koneksi gagal"
-**Solusi:**
-- Pastikan MySQL server running
-- Cek konfigurasi di `connection.php` (hostname, username, password, database)
-- Cek apakah database sudah dibuat
-
-### Error: "Akses ditolak / Anda harus login"
-**Solusi:**
-- Login terlebih dahulu sebelum akses halaman
-- Pastikan session sudah aktif (session cookie enabled)
-- Clear browser cache/cookies jika perlu
-
-### Error: "Username/Email sudah terdaftar"
-**Solusi:**
-- Gunakan username atau email yang belum pernah didaftar
-- Cek apakah sudah ada akun dengan email/username yang sama
-
-### Film tidak muncul di dashboard user
-**Solusi:**
-- Pastikan film sudah ditambahkan oleh admin
-- Refresh halaman browser
-- Cek apakah database memiliki data film
-
-### Komentar tidak muncul setelah submit
-**Solusi:**
-- Pastikan Anda sudah login sebagai user
-- Refresh halaman detail film
-- Cek console browser untuk error JavaScript
-
-### Bookmark gagal ditambahkan
-**Solusi:**
-- Pastikan Anda sudah login
-- Pastikan film belum di-bookmark sebelumnya
-- Refresh halaman jika ada error
 
 ---
 
