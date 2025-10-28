@@ -1,3 +1,15 @@
+<?php
+    session_start();
+    // Jika user sudah login, redirect ke halaman index
+    if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true){
+        if($_SESSION['user_role'] === 'admin'){
+            header("Location: ../../admin/view/index.php");
+        } else {
+            header("Location: ../../user/view/index.php");
+        }
+    }
+?>
+
 <!doctype html>
 <html lang="en">
   <head>

@@ -5,11 +5,12 @@
     $genre = $_POST['genre'];
     $sutradara = $_POST['sutradara'];
     $gambar = $_POST['gambar'];
+    $sinopsis = $_POST['sinopsis'];
 
 
     try{
-        $stmt = mysqli_prepare($connection, "INSERT INTO movie (judul, genre, sutradara, gambar) VALUES (?, ?, ?, ?)");
-        mysqli_stmt_bind_param($stmt, "ssss", $judul, $genre, $sutradara, $gambar);
+        $stmt = mysqli_prepare($connection, "INSERT INTO movie (judul, genre, sutradara, gambar, sinopsis) VALUES (?, ?, ?, ?, ?)");
+        mysqli_stmt_bind_param($stmt, "sssss", $judul, $genre, $sutradara, $gambar, $sinopsis);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
 

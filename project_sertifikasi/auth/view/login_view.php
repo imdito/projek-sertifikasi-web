@@ -111,9 +111,6 @@
                             Remember me
                         </label>
                     </div>
-                    <div>
-                        <a href="#" class="text-decoration-none forgot-password" style="color: #6f42c1;">Forgot?</a>
-                    </div>
                 </div>
 
                 <div class="d-grid mb-3">
@@ -122,7 +119,7 @@
             </form>
 
             <div class="text-center mt-4">
-                <span class="text-muted">Don't have an account?</span> 
+                <span class="text-muted">Tidak Punya Akun?</span> 
                 <a href="register_view.php" class="text-decoration-none" style="color: #c1424dff; font-weight: bold;">Register</a>
             </div>
             </div>

@@ -1,7 +1,6 @@
 <?php
 
     session_start();
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -36,12 +35,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="user/view/bookmark_page.php">Bookmark</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
                 

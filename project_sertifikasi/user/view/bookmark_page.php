@@ -68,12 +68,6 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="bookmark_page.php">Bookmark</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li>
                 </ul>
 
                 <ul class="navbar-nav ms-auto">
@@ -109,7 +103,7 @@
                                     echo "<td>" . $row['judul'] . "</td>";
                                     echo "<td>" . $row['genre'] . "</td>";
                                     echo "<td>" . $row['sutradara'] . "</td>";
-                                    echo "<td> <img src='" . $row['gambar'] . "' alt='" . $row['judul'] . "' style='width: 100px; height: auto;'></td>";
+                                    echo "<td> <img src='" . $row['gambar'] . "' alt='" . $row['judul'] . "' style='width: 100px;  height: auto;'></td>";
                                     echo "<td>
                                             <a href='../controller/delete_bookmark.php?id=" . $row['id'] . "' class='btn btn-danger btn-sm' onclick=\"return confirm('Apakah Anda yakin ingin menghapus film ini?');\">Delete</a>
                                           </td>";

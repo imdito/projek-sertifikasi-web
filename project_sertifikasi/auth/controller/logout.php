@@ -6,7 +6,7 @@
     session_destroy();
 
     // Redirect ke halaman login setelah logout
-    header("Location: ../view/login_view.php");
+    header("Location: ../../landing_page.php");
     exit;
 
 

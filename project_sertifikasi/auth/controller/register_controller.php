@@ -17,7 +17,7 @@
             exit();
         }
         
-        // Cek apakah username sudah ada
+        // Cek apakah email sudah ada
         $stmt = $connection->prepare("SELECT id FROM users WHERE email = ?");
         $stmt->bind_param("s", $email);
         if($stmt->execute()){
@@ -35,6 +35,23 @@
  
         
         $stmt->close();
+
+
+        //cek apakah username sudah ada
+        $stmt = $connection->prepare("SELECT id FROM users WHERE name = ?");
+        $stmt->bind_param("s", $username);
+        if($stmt->execute()){
+            echo "berhasil";
+            $stmt->store_result();
+            if($stmt->num_rows > 0){
+                // Name sudah digunakan
+                header("Location: ../view/register_view.php?error=exists");
+                exit();
+            }
+        } else {
+            echo "gagal";
+            echo $stmt->error;
+        }
 
         // Hash password sebelum disimpan
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);

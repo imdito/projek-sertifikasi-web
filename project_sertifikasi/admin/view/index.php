@@ -32,6 +32,7 @@
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                     <a class="nav-link" href="tambah_view.php">Tambah Film</a>
+                    <a class="nav-link" href="comments_view.php">Komentar</a>
                 </div>
             </div>
            <ul class="navbar-nav ms-auto">
@@ -57,6 +58,7 @@
                             <th scope="col">Genre</th>
                             <th scope="col">Sutradara</th>
                             <th scope="col">Link Gambar</th>
+                            <th scope="col">Sinopsis</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -71,8 +73,9 @@
                                     echo "<td>" . $row['genre'] . "</td>";
                                     echo "<td>" . $row['sutradara'] . "</td>";
                                     echo "<td> <a href='" . $row['gambar'] . "'>Link</a></td>";
+                                    echo "<td>" . $row['sinopsis'] . "</td>";
                                     echo "<td>
-                                            <a href='edit.php?id=" . $row['id'] . "&judul=" . $row['judul'] . "&genre=" . $row['genre'] . "&sutradara=" . $row['sutradara'] . "&tahun=" . $row['tahun'] . "' class='btn btn-primary btn-sm mt-2 mb-2'>Edit</a>
+                                            <a href='edit_view.php?id=" . $row['id'] . "&judul=" . $row['judul'] . "&genre=" . $row['genre'] . "&sutradara=" . $row['sutradara'] . "&sinopsis=" . $row['sinopsis'] . "&gambar=" . $row['gambar'] . "' class='btn btn-primary btn-sm mt-2 mb-2'>Edit</a>
                                             <a href='../controller/delete.php?id=" . $row['id'] . "' class='btn btn-danger btn-sm' onclick=\"return confirm('Apakah Anda yakin ingin menghapus film ini?');\">Delete</a>
                                           </td>";
                                     echo "</tr>";

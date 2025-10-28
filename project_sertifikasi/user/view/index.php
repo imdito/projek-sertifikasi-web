@@ -67,12 +67,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="bookmark_page.php">Bookmark</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li>
                 </ul>
 
                 <ul class="navbar-nav ms-auto">
@@ -99,42 +93,24 @@
                 include '../../admin/controller/get_movie_data.php';
                 foreach($movies as $movie){
                     echo '<div class="col">
-                    <a href="order.html">   
-                        <div class="card shadow-lg rounded-0 border-light" style="width: 300px; height: 400px;">
-                            <img src="'.$movie['gambar'].'" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h4 class="card-text fw-bolder text-dark">'.$movie['judul'].'</h4>
-                                <div class="container text-center">
-                                    <div class="row align-items-end">
-                                        <div class="col">
-                                            <a href="" class="btn btn-primary text-white fw-bolder " data-bs-toggle="modal" data-bs-target="#modaldeskripsi'.$movie['id'].'" style="width: 100%; margin-top: 10%">Detail</a>
-                                        </div>
-                                        <div class="col">
-                                            <a href="../controller/add_bookmark.php?id='.$movie['id'].'" class="btn btn-success text-white fw-bolder" style="width: 100%; margin-top: 10%">Tambah</a>
-                                        </div>
+                    
+                    <div class="card shadow-lg rounded-0 border-light" style="width: 300px  ;">
+                        <img src="'.$movie['gambar'].'" class="card-img-top" alt="'. $movie['judul'].'" style="object-fit: contain; ">
+                        <div class="card-body">
+                            <h4 class="card-text fw-bolder text-dark">'.$movie['judul'].'</h4>
+                            <div class="container text-center">
+                                <div class="row align-items-end">
+                                    <div class="col">
+                                        <a href="detail_page.php?id='.$movie['id'].'" class="btn btn-primary text-white fw-bolder " style="width: 100%; margin-top: 10%">Detail</a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="../controller/add_bookmark.php?id='.$movie['id'].'" class="btn btn-success text-white fw-bolder" style="width: 100%; margin-top: 10%">Tambah</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <!-- Modal -->
-                <div class="modal fade" id="modaldeskripsi'.$movie['id'].'" tabindex="-1" aria-labelledby="modaldeskripsiLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="modaldeskripsiLabel">'.$movie['judul'].'</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                        <div class="modal-body">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus autem distinctio aspernatur doloribus magnam odio commodi aliquam quis nostrum obcaecati officia voluptates totam delectus ea dolor voluptate, optio, quo illo quisquam eum ipsam. Tempore doloribus eveniet possimus quibusdam dicta accusamus corporis exercitationem ipsum, aliquid, dolorum provident. At blanditiis dignissimos veniam?
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                        </div>
                     </div>
+                    
                 </div>';
                 }
                 ?>

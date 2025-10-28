@@ -30,20 +30,26 @@
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-danger navbar-dark fw-bolder">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Manajemen Film</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="index.php">Home</a>
-                    <a class="nav-link active" href="tambah_view.php">Tambah Film</a>
-                </div>
-            </div>
+  <nav class="navbar navbar-expand-lg bg-danger navbar-dark fw-bolder">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Manajemen Film</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link active" href="tambah_view.php">Tambah Film</a>
+          <a class="nav-link" href="comments_view.php">Komentar</a>
         </div>
-    </nav>
+      </div>
+       <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../../auth/controller/logout.php">Logout</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
 
     <div class="form-container">
       <h2 class="text-center fw-bold mb-4">Tambah Film</h2>
@@ -78,20 +84,13 @@
               <input type="text" class="form-control" id="link_gambar" name="gambar" placeholder="Masukkan link gambar">
             </div>
         
-
-            
-          </div>
-          
-          <div class="col-md-5">
-            <h6 class="fw-bold">Poster Pilihanmu:</h6>
-            <button type="button" class="btn">Lihat Gambar</button>
-            <div id="poster-display" class="text-center text-md-start">
+            <div class="mb-3">
+              <label for="sinopsis" class="form-label">Sinopsis</label>
+              <textarea class="form-control" id="sinopsis" name="sinopsis" rows="4" placeholder="Masukkan sinopsis film" required></textarea>
             </div>
           </div>
-        </div>
-        
         <div class="mt-4">
-          <button type="submit" class="btn btn-danger w-100 btn-lg">Kirim Vote</button>
+          <button type="submit" class="btn btn-danger w-100 btn-lg">Submit Film</button>
         </div>
         
       </form>
@@ -99,34 +98,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-      // Fungsi untuk menampilkan poster
-      function showPoster(imageUrl) {
-        const displayArea = document.getElementById('poster-display');
-        displayArea.innerHTML = `<img src="${imageUrl}" alt="Movie Poster">`;
-      }
-
-      // Fungsi untuk handle submit vote
-      function handleVote(event) {
-        // 1. Mencegah form submit secara default
-        event.preventDefault(); 
-        
-        // 2. Mendapatkan film yang dipilih
-        const selectedMovie = document.querySelector('input[name="movie"]:checked');
-        
-        if (selectedMovie) {
-          const movieName = selectedMovie.value;
-          
-          // 3. Menampilkan alert
-          alert(`Terima kasih, suara Anda untuk ${movieName} telah dicatat.`);
-          
-          // 4. Mengarahkan kembali ke index.html
-          window.location.href = 'index.html';
-        } else {
-          // Ini seharusnya tidak terjadi karena ada 'required', tapi sebagai penjagaan
-          alert('Silakan pilih film terlebih dahulu.');
-        }
-      }
-    </script>
   </body>
 </html>
